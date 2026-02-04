@@ -1,0 +1,33 @@
+<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#0086D1;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#00599C;stop-opacity:1" />
+        </linearGradient>
+        <filter id="dropShadow">
+            <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+            <feOffset dx="2" dy="2" result="offsetblur"/>
+            <feMerge>
+                <feMergeNode in="offsetblur"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+        <filter id="gloss" x="0" y="0" width="200%" height="200%">
+            <feSpecularLighting result="specOut" specularExponent="20" lighting-color="#ffffff">
+                <fePointLight x="50" y="-30" z="200"/>
+            </feSpecularLighting>
+            <feComposite in="SourceGraphic" in2="specOut" operator="arithmetic" k1="0" k2="1" k3="1" k4="0"/>
+        </filter>
+    </defs>
+    <g filter="url(#dropShadow)">
+        <!-- Shield/Badge Base -->
+        <path d="M228,47.8l-8.5,152.8L128,245.9L36.5,200.6L28,47.8H228z" fill="#004482"/>
+        <path d="M211.5,60.8l-7.3,130.6l-76.2,37.8V60.8H211.5z" fill="#00599C"/>
+        <path d="M128,60.8v168.4l-76.2-37.8L44.5,60.8H128z" fill="url(#blueGrad)"/>
+        
+        <!-- C letter -->
+        <path d="M185,95h-18l-5,25h16c5.5,0,10,4.5,10,10v35c0,5.5-4.5,10-10,10h-62c-5.5,0-10-4.5-10-10V95h32V75H86 v110h102v-65C188,105,185,95,185,95z" fill="#FFFFFF"/>
+        <!-- Plus signs -->
+        <path d="M210,110h-10v-10h-10v10h-10v10h10v10h10v-10h10V110z M240,110h-10v-10h-10v10h-10v10h10v10h10v-10h10V110z" fill="#FFFFFF" transform="translate(-20, 20)"/>
+    </g>
+</svg>

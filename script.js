@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             const targetId = this.getAttribute('href');
             if (targetId === '#') return;
-            
+
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
                 targetElement.scrollIntoView({
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Simulate sending
             const btn = contactForm.querySelector('button[type="submit"]');
             const originalText = btn.innerText;
-            
+
             btn.innerText = 'Mengirim...';
             btn.disabled = true;
 
@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 alert('Terima kasih! Pesan Anda telah "terkirim" (demo).');
                 contactForm.reset();
                 btn.innerText = 'Terkirim!';
-                
+
                 setTimeout(() => {
                     btn.innerText = originalText;
                     btn.disabled = false;
@@ -57,26 +57,69 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Optional: Add simple scroll animation reveal
-    const sections = document.querySelectorAll('.section');
-    
+    // Typing Effect for Hero
+    const heroTitle = document.querySelector('.hero h1');
+    if (heroTitle) {
+        // Simple typing cursor effect could be added here if requested, 
+        // but the CSS gradient text is already applied.
+        // Let's add a subtitle typing effect instead if desired, or just leave the fancy CSS.
+        // For now, the CSS gradient animation on h1 is sufficient "add animation."
+    }
+
+    // Advanced Scroll Reveal Animation
     const observerOptions = {
-        threshold: 0.1
+        threshold: 0.15,
+        rootMargin: "0px 0px -50px 0px"
     };
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target); // Only animate once
             }
         });
     }, observerOptions);
 
-    sections.forEach(section => {
-        section.style.opacity = '0';
-        section.style.transform = 'translateY(20px)';
-        section.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
-        observer.observe(section);
+    // Elements to animate
+    const revealElements = document.querySelectorAll('.section-title, .profile-text, .profile-img, .card, .article-item, .contact-form, .skill-card');
+
+    revealElements.forEach((el, index) => {
+        el.classList.add('reveal');
+
+        // Add staggered delays for grids
+        if (el.classList.contains('card') || el.classList.contains('article-item') || el.classList.contains('skill-card')) {
+            // Calculate delay based on index in parent, simplified approach:
+            // Just random or cycling delays for a natural feel
+            // This simple modulo approach staggers items in a row (assuming 3 per row max usually)
+            const delayClass = `delay-${((index % 5) + 1) * 100}`;
+            el.classList.add(delayClass);
+        }
+
+        observer.observe(el);
+    });
+
+
+    // --- 3D Tilt Effect ---
+    const tiltElements = document.querySelectorAll('.card, .skill-card');
+
+    tiltElements.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+
+            const rotateX = ((y - centerY) / centerY) * -10; // Max rotation deg
+            const rotateY = ((x - centerX) / centerX) * 10;
+
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+        });
+
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
+        });
     });
 });

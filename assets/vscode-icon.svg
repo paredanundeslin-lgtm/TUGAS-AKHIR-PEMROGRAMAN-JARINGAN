@@ -1,0 +1,17 @@
+<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <filter id="shadow">
+            <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.3"/>
+        </filter>
+        <linearGradient id="blueRibbon" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#0065A9"/>
+            <stop offset="100%" stop-color="#007ACC"/>
+        </linearGradient>
+    </defs>
+    <g filter="url(#shadow)">
+        <path fill="#0065A9" d="M174.5,21.9l-78.1,60.5L62.7,60.8L18.4,87.6V168l43.5,27.1l34.4-21.8l78.7,60.4L237.6,128L174.5,21.9z"/>
+        <path fill="#007ACC" d="M174.5,21.9l-78.1,60.5l88.8,45.2L174.5,21.9z"/>
+        <path fill="#007ACC" d="M175.1,233.7l63.1-105.3l-52.9-0.4L18.4,168V87.6l156.7,146.1z"/>
+        <path fill="#1F9CF0" d="M18.4,168l44.3,27.5l112.4-86.8L18.4,168z"/>
+    </g>
+</svg>
