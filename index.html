@@ -1,21 +1,31 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Deslin Paredanun - Mahasiswa Teknik Informatika</title>
-    <meta name="description" content="Portofolio resmi Deslin Paredanun, Mahasiswa Teknik Informatika Universitas Indonesia Timur.">
-    
+    <meta name="description"
+        content="Portofolio resmi Deslin Paredanun, Mahasiswa Teknik Informatika Universitas Indonesia Timur.">
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;700;800&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;700;800&display=swap"
+        rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
     <!-- FontAwesome for Icons (Optional, using text for now if fails, but good to have) -->
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> 
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
+    <div class="fixed-background">
+        <div class="blur-orb orb-1"></div>
+        <div class="blur-orb orb-2"></div>
+        <div class="grid-overlay"></div>
+    </div>
 
     <header>
         <div class="container">
@@ -24,6 +34,7 @@
                 <button class="mobile-menu-btn" id="mobile-menu-btn">☰</button>
                 <ul class="nav-links" id="nav-links">
                     <li><a href="#profil">Profil</a></li>
+                    <li><a href="#skills">Keahlian</a></li>
                     <li><a href="#portofolio">Portofolio</a></li>
                     <li><a href="#artikel">Artikel</a></li>
                     <li><a href="#kontak">Kontak</a></li>
@@ -53,8 +64,40 @@
                 </div>
                 <div class="profile-text">
                     <h3>Salam Kenal! 👋</h3>
-                    <p style="margin-bottom: 1rem;">Saya adalah mahasiswa <strong>Teknik Informatika</strong> di <strong>Universitas Indonesia Timur</strong> yang memiliki ketertarikan mendalam pada pengembangan web, teknologi informasi, dan pemrograman modern.</p>
-                    <p>Saya senang mengeksplorasi teknologi baru, memecahkan masalah melalui kode, dan terus mengembangkan keterampilan saya untuk menjadi seorang profesional IT yang andal.</p>
+                    <p style="margin-bottom: 1rem;">Saya adalah mahasiswa <strong>Teknik Informatika</strong> di
+                        <strong>Universitas Indonesia Timur</strong> yang memiliki ketertarikan mendalam pada
+                        pengembangan web, teknologi informasi, dan pemrograman modern.
+                    </p>
+                    <p>Saya senang mengeksplorasi teknologi baru, memecahkan masalah melalui kode, dan terus
+                        mengembangkan keterampilan saya untuk menjadi seorang profesional IT yang andal.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section-title">Keahlian & Tools</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <img src="assets/html-icon.png" alt="HTML" class="skill-img">
+                    <h3>HTML</h3>
+                </div>
+                <div class="skill-card">
+                    <img src="assets/css-icon.png" alt="CSS" class="skill-img">
+                    <h3>CSS</h3>
+                </div>
+                <div class="skill-card">
+                    <img src="assets/python-icon.svg" alt="Python" class="skill-img">
+                    <h3>Python</h3>
+                </div>
+                <div class="skill-card">
+                    <img src="assets/cpp-icon.svg" alt="C++" class="skill-img">
+                    <h3>C++</h3>
+                </div>
+                <div class="skill-card">
+                    <img src="assets/vscode-icon.svg" alt="VS Code" class="skill-img">
+                    <h3>VS Code</h3>
                 </div>
             </div>
         </div>
@@ -71,7 +114,8 @@
                     </div>
                     <div class="card-content">
                         <h3>Website Sederhana</h3>
-                        <p>Landing page responsif yang dibangun menggunakan HTML5 dan CSS3 murni dengan desain modern.</p>
+                        <p>Landing page responsif yang dibangun menggunakan HTML5 dan CSS3 murni dengan desain modern.
+                        </p>
                     </div>
                 </div>
                 <!-- Project 2 -->
@@ -81,7 +125,8 @@
                     </div>
                     <div class="card-content">
                         <h3>Aplikasi CRUD PHP</h3>
-                        <p>Sistem manajemen data sederhana untuk pengelolaan inventaris barang menggunakan PHP dan MySQL.</p>
+                        <p>Sistem manajemen data sederhana untuk pengelolaan inventaris barang menggunakan PHP dan
+                            MySQL.</p>
                     </div>
                 </div>
                 <!-- Project 3 -->
@@ -91,7 +136,8 @@
                     </div>
                     <div class="card-content">
                         <h3>Desain UI/UX</h3>
-                        <p>Konsep desain antarmuka pengguna untuk aplikasi mobile marketplace yang fokus pada kemudahan penggunaan.</p>
+                        <p>Konsep desain antarmuka pengguna untuk aplikasi mobile marketplace yang fokus pada kemudahan
+                            penggunaan.</p>
                     </div>
                 </div>
             </div>
@@ -112,7 +158,7 @@
                     <div class="article-meta">15 Januari 2026</div>
                     <p>Cerita perjalanan saya memulai belajar coding dari nol hingga bisa membuat website sendiri...</p>
                 </div>
-                 <div class="article-item">
+                <div class="article-item">
                     <h3>Tips Sukses Mahasiswa Teknik Informatika</h3>
                     <div class="article-meta">01 Januari 2026</div>
                     <p>Strategi belajar, manajemen waktu, dan sumber daya penting untuk bertahan di jurusan IT...</p>
@@ -142,8 +188,10 @@
                         <textarea id="message" rows="5" placeholder="Tulis pesan Anda..." required></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary" style="width: 100%;">Kirim Pesan</button>
-                    <div style="margin-top: 1rem; text-align: center; font-size: 0.9rem; color: var(--secondary-color);">
-                        Atau email ke: <a href="mailto:deslinparedanun227@gmail.com" style="color: var(--primary-color);">deslinparedanun227@gmail.com</a>
+                    <div
+                        style="margin-top: 1rem; text-align: center; font-size: 0.9rem; color: var(--secondary-color);">
+                        Atau email ke: <a href="mailto:deslinparedanun227@gmail.com"
+                            style="color: var(--primary-color);">deslinparedanun227@gmail.com</a>
                     </div>
                 </form>
             </div>
@@ -158,4 +206,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
